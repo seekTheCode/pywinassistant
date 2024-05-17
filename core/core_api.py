@@ -1,6 +1,7 @@
 from openai import OpenAI
+from api_key import API_KEY
 
-client = OpenAI(api_key='insert_your_api_key_here')
+client = OpenAI(api_key=API_KEY)
 # Available models: "gpt-4-1106-preview", "gpt-3.5-turbo-1106", or "davinci-codex"
 MODEL_NAME = "gpt-3.5-turbo-1106"
 

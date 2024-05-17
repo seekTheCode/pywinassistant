@@ -8,14 +8,14 @@ import threading
 from voice import speaker, set_volume, set_subtitles
 from driver import assistant, act, fast_act, auto_role, perform_simulated_keypress, write_action
 from window_focus import activate_windowt_title
-
+print("Loading assistant...")
 # Initialize the speech recognition and text to speech engines
 assistant_voice_recognition_enabled = True  # Disable if you don't want to use voice recognition
 assistant_name_handle = "Ok Computer"  # Change this to your preferred name, will be used for voice activation.
 assistant_anim_enabled = True
 assistant_voice_enabled = True
 set_volume(0.25)
-assistant_subtitles_enabled = True
+assistant_subtitles_enabled = False
 recognizer = sr.Recognizer()
 message_queue = Queue()
 Ctk.set_appearance_mode("dark")  # Modes: system (default), light, dark
@@ -524,8 +524,8 @@ def create_app():
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
     # Use assistant_photo_width and assistant_photo_height instead of width() and height()
-    position_right = int(screen_width - assistant_photo_width) + 35
-    position_bottom = int(screen_height - assistant_photo_height) - 30
+    position_right = int(screen_width - assistant_photo_width) - 500
+    position_bottom = int(screen_height - assistant_photo_height) - 500
     drag_time = time.time()
 
     # Set initial geometry to place the assistant at the bottom right
